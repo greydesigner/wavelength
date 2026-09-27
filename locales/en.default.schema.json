@@ -36,7 +36,8 @@
     "typography": "Typography",
     "typography_paragraph": "Wavelength uses a fixed brand typeface pairing (a serif display face for headings, a grotesque sans for body text) as part of its visual identity. Use the scales below to adjust sizing without changing the typefaces themselves.",
     "logo": "Logo",
-    "hero": "Hero"
+    "hero": "Hero",
+    "build_queue": "Build queue"
   },
   "labels": {
     "accent": "Accent",
@@ -74,7 +75,14 @@
     "section_height": "Section height",
     "eyebrow": "Eyebrow text",
     "button_label": "Button label",
-    "button_link": "Button link"
+    "button_link": "Button link",
+    "build_number": "Build number",
+    "stage_label": "Stage label",
+    "build_description": "Build description",
+    "total_stages": "Total stages",
+    "current_stage": "Current stage",
+    "availability_label": "Availability label",
+    "availability_value": "Availability value"
   },
   "options": {
     "alignment": {

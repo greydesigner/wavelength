@@ -177,8 +177,8 @@ input[type="submit"] {
 }
 .button--outline {
   background: transparent;
-  border-color: rgba(var(--color-inverse-text), 0.6);
-  color: rgb(var(--color-inverse-text));
+  border-color: rgba(var(--color-text), 0.4);
+  color: rgb(var(--color-text));
 }
 .button--dark {
   background: rgb(var(--color-inverse-background));

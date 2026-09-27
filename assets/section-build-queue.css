@@ -1,0 +1,111 @@
+.build-queue {
+  padding: 52px 0;
+}
+
+.bq-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.bq-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bq-number {
+  font-family: var(--font-heading--family);
+  font-size: 52px;
+  font-weight: 600;
+  color: rgb(var(--color-accent));
+  line-height: 1;
+}
+
+.bq-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(var(--color-text-muted));
+  margin-bottom: 6px;
+}
+
+.bq-sub {
+  font-size: 14px;
+  color: rgba(var(--color-text), 0.85);
+}
+
+.bq-track {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 20px 0 0;
+}
+
+.bq-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: rgba(var(--color-text), 0.15);
+}
+
+.bq-dot.done {
+  background: rgb(var(--color-accent));
+}
+
+.bq-dot.current {
+  background: rgb(var(--color-accent));
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.bq-dot.current::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgb(var(--color-accent));
+  border-radius: 5px;
+  animation: bq-pulse 1.8s infinite;
+}
+
+@keyframes bq-pulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.bq-right {
+  text-align: right;
+}
+
+.bq-right .avail {
+  font-size: 14px;
+  color: rgba(var(--color-text), 0.85);
+  margin-bottom: 12px;
+}
+
+.bq-right .avail strong {
+  color: rgb(var(--color-text));
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .bq-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bq-right {
+    text-align: center;
+  }
+  .bq-track {
+    justify-content: center;
+  }
+}

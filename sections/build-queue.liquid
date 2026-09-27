@@ -1,0 +1,126 @@
+{{ 'section-build-queue.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign total_stages = section.settings.total_stages
+  assign current_stage = section.settings.current_stage
+%}
+
+<section class="build-queue color-{{ section.settings.color_scheme }}">
+  <div class="wrap bq-inner">
+    <div class="bq-left">
+      {% if section.settings.build_number != blank %}
+        <div class="bq-number">{{ section.settings.build_number }}</div>
+      {% endif %}
+      <div>
+        {% if section.settings.stage_label != blank %}
+          <div class="bq-label">{{ section.settings.stage_label }}</div>
+        {% endif %}
+        {% if section.settings.build_description != blank %}
+          <div class="bq-sub">{{ section.settings.build_description }}</div>
+        {% endif %}
+        <div class="bq-track">
+          {% for i in (1..total_stages) %}
+            {% if i < current_stage %}
+              <div class="bq-dot done"></div>
+            {% elsif i == current_stage %}
+              <div class="bq-dot current"></div>
+            {% else %}
+              <div class="bq-dot"></div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="bq-right">
+      {% if section.settings.availability_label != blank %}
+        <div class="avail">
+          {{ section.settings.availability_label }}
+          <strong>{{ section.settings.availability_value }}</strong>
+        </div>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="button button--outline">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:general.build_queue",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "text",
+      "id": "build_number",
+      "label": "t:labels.build_number",
+      "default": "043"
+    },
+    {
+      "type": "text",
+      "id": "stage_label",
+      "label": "t:labels.stage_label",
+      "default": "Currently On the Bench"
+    },
+    {
+      "type": "text",
+      "id": "build_description",
+      "label": "t:labels.build_description",
+      "default": "The Ridgeline · cedar & rosewood concert · shaping stage"
+    },
+    {
+      "type": "range",
+      "id": "total_stages",
+      "label": "t:labels.total_stages",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "current_stage",
+      "label": "t:labels.current_stage",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "availability_label",
+      "label": "t:labels.availability_label",
+      "default": "Next open build slot:"
+    },
+    {
+      "type": "text",
+      "id": "availability_value",
+      "label": "t:labels.availability_value",
+      "default": "March 2027"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label",
+      "default": "Join the Waitlist"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:general.build_queue"
+    }
+  ]
+}
+{% endschema %}

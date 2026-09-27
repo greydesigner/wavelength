@@ -3,9 +3,14 @@
     "hero": {
       "type": "hero",
       "settings": {}
+    },
+    "build-queue": {
+      "type": "build-queue",
+      "settings": {}
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "build-queue"
   ]
 }
