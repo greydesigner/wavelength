@@ -1,0 +1,63 @@
+.craft-process {
+  background-color: rgb(var(--color-background-alt));
+}
+
+.process-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.process-row + .process-row {
+  margin-top: 96px;
+}
+
+.process-row .photo {
+  height: 380px;
+  border-radius: 2px;
+}
+
+.process-row .text h3 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 10px 0 16px;
+}
+
+.process-row .text p {
+  color: rgb(var(--color-text-muted));
+  font-size: 15.5px;
+  line-height: 1.75;
+  max-width: 420px;
+}
+
+.process-row .step {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgb(var(--color-accent));
+  font-weight: 600;
+}
+
+.process-row.reverse .photo {
+  order: 2;
+}
+
+.process-row.reverse .text {
+  order: 1;
+}
+
+@media (max-width: 760px) {
+  .process-row,
+  .process-row.reverse {
+    grid-template-columns: 1fr;
+  }
+  .process-row.reverse .photo,
+  .process-row.reverse .text {
+    order: initial;
+  }
+  .process-row .photo {
+    height: 280px;
+  }
+  .process-row + .process-row {
+    margin-top: 56px;
+  }
+}

@@ -40,7 +40,9 @@
     "build_queue": "Build queue",
     "brand_story": "Brand story",
     "luthiers": "Luthiers",
-    "luthier": "Luthier"
+    "luthier": "Luthier",
+    "craft_process": "Craft process",
+    "process_step": "Process step"
   },
   "labels": {
     "accent": "Accent",
@@ -89,7 +91,8 @@
     "body": "Body text",
     "name": "Name",
     "role": "Role",
-    "quote": "Quote"
+    "quote": "Quote",
+    "step_label": "Step label"
   },
   "options": {
     "alignment": {

@@ -12,6 +12,37 @@
       "type": "brand-story",
       "settings": {}
     },
+    "craft-process": {
+      "type": "craft-process",
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "step_label": "STEP ONE",
+            "heading": "Selecting the wood",
+            "body": "Every top starts as a single board, tapped and listened to before it's ever cut. We're listening for stiffness, for resonance, for the wood's own voice — the instrument's tone is decided here, months before assembly begins."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "step_label": "STEP TWO",
+            "heading": "Shaping by hand",
+            "body": "Braces are carved and tuned by ear, not machine. The body is bent, glued, and clamped using techniques that haven't changed much in a century — because they still work better than anything faster."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "step_label": "STEP THREE",
+            "heading": "The final finish",
+            "body": "A thin, hand-rubbed finish that lets the wood keep breathing. Every instrument is strung, set up, and played by the luthier who built it before it's ever offered for sale."
+          }
+        }
+      },
+      "block_order": ["step1", "step2", "step3"],
+      "settings": {}
+    },
     "luthiers": {
       "type": "luthiers",
       "blocks": {
@@ -48,6 +79,7 @@
     "hero",
     "build-queue",
     "brand-story",
-    "luthiers"
+    "luthiers",
+    "craft-process"
   ]
 }
