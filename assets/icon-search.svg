@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+  <circle cx="9" cy="9" r="5.75" stroke="currentColor" stroke-width="var(--icon-stroke-width)" />
+  <line x1="17.25" y1="17.25" x2="13.6" y2="13.6" stroke="currentColor" stroke-linecap="round"
+    stroke-width="var(--icon-stroke-width)" />
+</svg>

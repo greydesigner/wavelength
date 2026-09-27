@@ -1,39 +1,125 @@
-<footer>
-  <div class="footer__copyright">
-    &copy;
-    {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
-  </div>
+<footer class="site-footer color-{{ section.settings.color_scheme }}">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="{{ routes.root_url }}" class="footer-brand__logo">
+        {% if settings.logo %}
+          {{ settings.logo | image_url: width: 150 | image_tag: loading: 'lazy', widths: '75, 150, 225' }}
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+      {% if section.settings.tagline != blank %}
+        <p class="footer-brand__tagline">{{ section.settings.tagline }}</p>
+      {% endif %}
+    </div>
 
-  <div class="footer__links">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
-
-  <div class="footer__payment">
-    {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
-        {{ type | payment_type_svg_tag }}
+    <div class="footer-columns">
+      {% for block in section.blocks %}
+        {% if block.type == 'link_column' %}
+          <div class="footer-columns__col" {{ block.shopify_attributes }}>
+            {% if block.settings.heading != blank %}
+              <h5>{{ block.settings.heading }}</h5>
+            {% endif %}
+            {% for link in block.settings.menu.links %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
       {% endfor %}
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'general.all_rights_reserved' | t }}</div>
+
+    {% if section.settings.show_payment_icons %}
+      <div class="footer-bottom__payment">
+        {% for type in shop.enabled_payment_types %}
+          {{ type | payment_type_svg_tag }}
+        {% endfor %}
+      </div>
     {% endif %}
   </div>
 </footer>
 
 {% stylesheet %}
-  footer {
+  .site-footer {
+    border-top: 1px solid rgb(var(--color-border));
+    padding: 56px var(--page-margin) 32px;
+  }
+
+  .footer-inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 40px;
   }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
+
+  .footer-brand__logo {
+    display: inline-block;
+    font-family: var(--font-heading--family);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
-  footer .footer__links,
-  footer .footer__payment {
+  .footer-brand__logo img {
+    display: block;
+    height: auto;
+  }
+  .footer-brand__tagline {
+    font-size: 13px;
+    color: rgb(var(--color-text-muted));
+    max-width: 280px;
+    line-height: 1.6;
+  }
+
+  .footer-columns {
     display: flex;
-    gap: 1rem;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .footer-columns__col h5 {
+    font-family: var(--font-body--family);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--color-text-muted));
+    margin-bottom: 14px;
+  }
+  .footer-columns__col a {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: rgb(var(--color-text));
+  }
+  .footer-columns__col a:hover {
+    color: rgb(var(--color-accent));
+  }
+
+  .footer-bottom {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    border-top: 1px solid rgb(var(--color-border));
+    padding-top: 24px;
+    font-size: 12.5px;
+    color: rgb(var(--color-text-muted));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-bottom__payment {
+    display: flex;
+    gap: 8px;
+  }
+  .footer-bottom__payment svg {
+    height: 20px;
+    width: auto;
   }
 {% endstylesheet %}
 
@@ -42,9 +128,16 @@
   "name": "t:general.footer",
   "settings": [
     {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
+      "type": "text",
+      "id": "tagline",
+      "label": "t:labels.tagline",
+      "default": "Handcrafted acoustic guitars, built one at a time in a small workshop."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
@@ -52,6 +145,33 @@
       "label": "t:labels.show_payment_icons",
       "default": true
     }
-  ]
+  ],
+  "blocks": [
+    {
+      "type": "link_column",
+      "name": "t:general.column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:labels.heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:labels.menu",
+          "default": "main-menu"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "default": {
+    "blocks": [
+      { "type": "link_column", "settings": { "heading": "Shop" } },
+      { "type": "link_column", "settings": { "heading": "Workshop" } },
+      { "type": "link_column", "settings": { "heading": "Support" } }
+    ]
+  }
 }
 {% endschema %}

@@ -13,8 +13,13 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "shop": { "type": "link_column", "settings": { "heading": "Shop", "menu": "main-menu" } },
+        "workshop": { "type": "link_column", "settings": { "heading": "Workshop", "menu": "main-menu" } },
+        "support": { "type": "link_column", "settings": { "heading": "Support", "menu": "main-menu" } }
+      },
+      "block_order": ["shop", "workshop", "support"],
       "settings": {
-        "menu": "",
         "show_payment_icons": true
       }
     }
