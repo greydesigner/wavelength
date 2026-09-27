@@ -42,7 +42,9 @@
     "luthiers": "Luthiers",
     "luthier": "Luthier",
     "craft_process": "Craft process",
-    "process_step": "Process step"
+    "process_step": "Process step",
+    "reels": "Reels",
+    "reel": "Reel"
   },
   "labels": {
     "accent": "Accent",
@@ -92,7 +94,10 @@
     "name": "Name",
     "role": "Role",
     "quote": "Quote",
-    "step_label": "Step label"
+    "step_label": "Step label",
+    "subtext": "Subtext",
+    "link": "Link",
+    "caption": "Caption"
   },
   "options": {
     "alignment": {

@@ -43,6 +43,21 @@
       "block_order": ["step1", "step2", "step3"],
       "settings": {}
     },
+    "reels": {
+      "type": "reels",
+      "blocks": {
+        "r1": { "type": "reel", "settings": { "caption": "Bracing the top", "link": "https://www.instagram.com/reel/wl_bracing041/" } },
+        "r2": { "type": "reel", "settings": { "caption": "Bending the sides", "link": "https://www.instagram.com/reel/wl_bending042/" } },
+        "r3": { "type": "reel", "settings": { "caption": "Cutting binding", "link": "https://www.instagram.com/reel/wl_binding039/" } },
+        "r4": { "type": "reel", "settings": { "caption": "Hand-rubbing finish", "link": "https://www.instagram.com/reel/wl_finish037/" } },
+        "r5": { "type": "reel", "settings": { "caption": "First note, live", "link": "https://www.instagram.com/reel/wl_stringup044/" } },
+        "r6": { "type": "reel", "settings": { "caption": "Tap-testing a top", "link": "https://www.instagram.com/reel/wl_tapwood038/" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {
+        "cta_link": "https://www.instagram.com/wavelengthinstruments/"
+      }
+    },
     "luthiers": {
       "type": "luthiers",
       "blocks": {
@@ -80,6 +95,7 @@
     "build-queue",
     "brand-story",
     "luthiers",
-    "craft-process"
+    "craft-process",
+    "reels"
   ]
 }

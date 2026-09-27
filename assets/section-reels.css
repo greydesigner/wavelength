@@ -1,0 +1,82 @@
+.reels {
+  background-color: rgb(var(--color-background-alt));
+}
+
+.reels .section-head p {
+  max-width: 480px;
+  margin: 14px auto 0;
+  color: rgb(var(--color-text-muted));
+}
+
+.reel-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .reel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .reel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.reel-card {
+  position: relative;
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.reel-photo {
+  aspect-ratio: 9 / 16;
+}
+
+.reel-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(20, 14, 8, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.reel-play svg {
+  width: 14px;
+  height: 14px;
+  fill: #fdfaf5;
+  margin-left: 2px;
+}
+
+.reel-card:hover .reel-play {
+  background: rgba(20, 14, 8, 0.78);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.reel-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 10px 10px;
+  background: linear-gradient(0deg, rgba(20, 14, 8, 0.7), transparent);
+  color: #fdfaf5;
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}
+
+.reel-cta {
+  text-align: center;
+  margin-top: 36px;
+}
