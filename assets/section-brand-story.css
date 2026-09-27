@@ -1,0 +1,22 @@
+.brand-story {
+  text-align: center;
+}
+
+.brand-story .wrap {
+  max-width: 680px;
+}
+
+.brand-story h2 {
+  font-size: clamp(26px, 3.4vw, 38px);
+  margin-bottom: 22px;
+}
+
+.brand-story__body {
+  color: rgb(var(--color-text-muted));
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.brand-story__body p + p {
+  margin-top: 1em;
+}

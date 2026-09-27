@@ -7,10 +7,15 @@
     "build-queue": {
       "type": "build-queue",
       "settings": {}
+    },
+    "brand-story": {
+      "type": "brand-story",
+      "settings": {}
     }
   },
   "order": [
     "hero",
-    "build-queue"
+    "build-queue",
+    "brand-story"
   ]
 }

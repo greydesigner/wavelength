@@ -3,6 +3,7 @@
    regardless of which color scheme the rest of the page is using. */
 .hero {
   position: relative;
+  padding: 0;
   height: var(--hero-height, 78vh);
   min-height: 460px;
   background-color: rgb(var(--color-inverse-background, 58, 44, 31));

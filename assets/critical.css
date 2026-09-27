@@ -184,3 +184,30 @@ input[type="submit"] {
   background: rgb(var(--color-inverse-background));
   color: rgb(var(--color-inverse-text));
 }
+
+/* ============ Wavelength shared section rhythm ============
+   Baseline vertical padding for every top-level content section;
+   individual sections (hero, build-queue, etc.) override this on
+   their own class selector, which -- deliberately, matching the
+   approved mockup -- outranks this plain element selector. */
+section {
+  padding: 88px 0;
+}
+@media (max-width: 640px) {
+  section {
+    padding: 56px 0;
+  }
+}
+
+/* ============ Wavelength shared eyebrow label ============
+   Small uppercase kicker text used above headings across many
+   sections (brand-story, luthiers, tonewood, listen, trade-in,
+   testimonials, etc.) */
+.eyebrow-sm {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--color-text-muted));
+  margin-bottom: 14px;
+  display: block;
+}
