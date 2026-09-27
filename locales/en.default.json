@@ -57,6 +57,7 @@
     "warmth": "Warmth",
     "brightness": "Brightness",
     "projection": "Projection",
-    "sustain": "Sustain"
+    "sustain": "Sustain",
+    "no_collection_selected": "Select a collection to display products."
   }
 }

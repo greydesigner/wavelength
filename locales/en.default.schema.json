@@ -48,7 +48,8 @@
     "tonewood_explorer": "Tonewood Explorer",
     "tonewood": "Tonewood",
     "listening_room": "Listening Room",
-    "track": "Track"
+    "track": "Track",
+    "featured_collection": "Featured collection"
   },
   "labels": {
     "accent": "Accent",
@@ -110,7 +111,9 @@
     "projection": "Projection",
     "sustain": "Sustain",
     "subtitle": "Subtitle",
-    "duration": "Duration"
+    "duration": "Duration",
+    "collection": "Collection",
+    "products_to_show": "Products to show"
   },
   "options": {
     "alignment": {

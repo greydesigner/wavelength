@@ -176,6 +176,13 @@
           ],
           "settings": {}
     },
+    "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+                "collection": "frontpage",
+                "products_to_show": 4
+          }
+    },
     "luthiers": {
       "type": "luthiers",
       "blocks": {
@@ -216,6 +223,7 @@
     "craft-process",
     "reels",
     "tonewood-explorer",
-    "listening-room"
+    "listening-room",
+    "featured-collection"
   ]
 }
