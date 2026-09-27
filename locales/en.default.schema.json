@@ -11,7 +11,7 @@
     "collection_card": "Collection card",
     "collections_grid": "Collections grid",
     "colors": "Colors",
-    "colors_paragraph": "Wavelength ships with two color schemes \u2014 Paper (light) and Ink (dark) \u2014 used across sections and section groups.",
+    "colors_paragraph": "Wavelength ships with two color schemes — Paper (light) and Ink (dark) — used across sections and section groups.",
     "column": "Column",
     "content": "Content",
     "custom_section": "Custom section",
@@ -35,7 +35,8 @@
     "theme": "Theme",
     "typography": "Typography",
     "typography_paragraph": "Wavelength uses a fixed brand typeface pairing (a serif display face for headings, a grotesque sans for body text) as part of its visual identity. Use the scales below to adjust sizing without changing the typefaces themselves.",
-    "logo": "Logo"
+    "logo": "Logo",
+    "hero": "Hero"
   },
   "labels": {
     "accent": "Accent",
@@ -68,7 +69,12 @@
     "logo_width": "Logo width",
     "color_scheme": "Color scheme",
     "tagline": "Tagline",
-    "heading": "Heading"
+    "heading": "Heading",
+    "image": "Image",
+    "section_height": "Section height",
+    "eyebrow": "Eyebrow text",
+    "button_label": "Button label",
+    "button_link": "Button link"
   },
   "options": {
     "alignment": {

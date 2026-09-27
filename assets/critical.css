@@ -150,3 +150,37 @@ input[type="submit"] {
   border-radius: var(--style-border-radius-buttons);
   font-family: var(--font-body--family);
 }
+
+/* ============ Wavelength shared button component ============
+   Used across the hero and every other section with a call-to-action.
+   Colors always come from the surrounding color-scheme's tokens so a
+   button reads correctly whichever scheme a section is set to. */
+.button {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: none;
+  text-align: center;
+  transition: opacity 0.15s ease;
+}
+.button:hover {
+  opacity: 0.85;
+}
+.button--primary {
+  background: rgb(var(--color-accent));
+  color: rgb(var(--color-accent-text));
+}
+.button--outline {
+  background: transparent;
+  border-color: rgba(var(--color-inverse-text), 0.6);
+  color: rgb(var(--color-inverse-text));
+}
+.button--dark {
+  background: rgb(var(--color-inverse-background));
+  color: rgb(var(--color-inverse-text));
+}
