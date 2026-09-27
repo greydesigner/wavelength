@@ -1,0 +1,200 @@
+{{ 'section-listening-room.css' | asset_url | stylesheet_tag }}
+
+<section class="listen color-{{ section.settings.color_scheme }}" id="listen-{{ section.id }}">
+  <div class="wrap">
+    <div class="section-head">
+      {% if section.settings.eyebrow != blank %}
+        <span class="eyebrow-sm">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subtext != blank %}
+        <p>{{ section.settings.subtext }}</p>
+      {% endif %}
+    </div>
+    <div class="player-card">
+      <div class="track-tabs" data-listen-tabs>
+        {% assign track_index = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'track' %}
+            <button
+              type="button"
+              class="track-tab{% if track_index == 0 %} active{% endif %}"
+              data-index="{{ track_index }}"
+              data-duration="{{ block.settings.duration }}"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.name }}<span>{{ block.settings.subtitle }}</span>
+            </button>
+            {% assign track_index = track_index | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="player">
+        <button type="button" class="play-btn" data-listen-play aria-label="Play sample">
+          <span data-listen-play-icon>&#9658;</span>
+        </button>
+        <div class="waveform">
+          <div class="wf-bars" data-listen-bars></div>
+          <div class="wf-progress" data-listen-progress><div class="wf-bars-inner" data-listen-progress-bars></div></div>
+        </div>
+        <div class="time" data-listen-time>0:00 / 0:00</div>
+      </div>
+      {% if section.settings.caption != blank %}
+        <div class="player-cap">{{ section.settings.caption }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('listen-{{ section.id }}');
+  if (!root) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('.track-tab'));
+  if (!tabs.length) return;
+
+  var wfBars = root.querySelector('[data-listen-bars]');
+  var wfProgressBars = root.querySelector('[data-listen-progress-bars]');
+  var wfProgress = root.querySelector('[data-listen-progress]');
+  var playBtn = root.querySelector('[data-listen-play]');
+  var playIcon = root.querySelector('[data-listen-play-icon]');
+  var timeReadout = root.querySelector('[data-listen-time]');
+
+  var currentTrack = 0, playing = false, elapsed = 0, timer = null;
+
+  function seededRandom(seed) {
+    var x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  }
+
+  function renderBars(seedOffset) {
+    var html = '';
+    for (var i = 0; i < 48; i++) {
+      var h = 18 + Math.round(seededRandom(i * 7.3 + seedOffset) * 64);
+      html += '<div class="bar" style="height:' + h + '%;"></div>';
+    }
+    wfBars.innerHTML = html;
+    wfProgressBars.innerHTML = html;
+  }
+
+  function formatTime(s) {
+    var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  function currentDuration() {
+    return parseFloat(tabs[currentTrack].getAttribute('data-duration')) || 24;
+  }
+
+  function updateTime() {
+    timeReadout.textContent = formatTime(elapsed) + ' / ' + formatTime(currentDuration());
+  }
+
+  function selectTrack(idx) {
+    currentTrack = idx;
+    elapsed = 0;
+    playing = false;
+    clearInterval(timer);
+    playIcon.innerHTML = '&#9658;';
+    wfProgress.style.width = '0%';
+    renderBars(idx * 100);
+    updateTime();
+    tabs.forEach(function (t, i) {
+      t.classList.toggle('active', i === idx);
+    });
+  }
+
+  playBtn.addEventListener('click', function () {
+    var total = currentDuration();
+    if (playing) {
+      playing = false;
+      playIcon.innerHTML = '&#9658;';
+      clearInterval(timer);
+      return;
+    }
+    playing = true;
+    playIcon.innerHTML = '&#10074;&#10074;';
+    timer = setInterval(function () {
+      elapsed += 0.2;
+      if (elapsed >= total) {
+        elapsed = total;
+        playing = false;
+        playIcon.innerHTML = '&#9658;';
+        clearInterval(timer);
+      }
+      wfProgress.style.width = (elapsed / total * 100) + '%';
+      updateTime();
+    }, 200);
+  });
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+      selectTrack(i);
+    });
+  });
+
+  renderBars(0);
+  updateTime();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "t:general.listening_room",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:labels.eyebrow",
+      "default": "Hear the Difference"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:labels.heading",
+      "default": "The Listening Room"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "t:labels.subtext",
+      "default": "Two instruments, the same short phrase, recorded dry in the shop. Same player, same room — only the wood changes."
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "t:labels.caption",
+      "default": "Audio placeholder — real recordings per instrument are a follow-up content pass."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "track",
+      "name": "t:general.track",
+      "settings": [
+        { "type": "text", "id": "name", "label": "t:labels.name" },
+        { "type": "text", "id": "subtitle", "label": "t:labels.subtitle" },
+        { "type": "range", "id": "duration", "label": "t:labels.duration", "min": 5, "max": 60, "step": 1, "unit": "s", "default": 24 }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "t:general.listening_room",
+      "blocks": [
+        { "type": "track", "settings": { "name": "The Wanderer", "subtitle": "Sitka spruce & mahogany · fingerstyle", "duration": 24 } },
+        { "type": "track", "settings": { "name": "The Ridgeline", "subtitle": "Cedar & rosewood · strummed", "duration": 19 } }
+      ]
+    }
+  ]
+}
+{% endschema %}

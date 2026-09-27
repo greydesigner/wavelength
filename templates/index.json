@@ -150,6 +150,32 @@
           ],
           "settings": {}
     },
+    "listening-room": {
+          "type": "listening-room",
+          "blocks": {
+                "wanderer": {
+                      "type": "track",
+                      "settings": {
+                            "name": "The Wanderer",
+                            "subtitle": "Sitka spruce & mahogany · fingerstyle",
+                            "duration": 24
+                      }
+                },
+                "ridgeline": {
+                      "type": "track",
+                      "settings": {
+                            "name": "The Ridgeline",
+                            "subtitle": "Cedar & rosewood · strummed",
+                            "duration": 19
+                      }
+                }
+          },
+          "block_order": [
+                "wanderer",
+                "ridgeline"
+          ],
+          "settings": {}
+    },
     "luthiers": {
       "type": "luthiers",
       "blocks": {
@@ -189,6 +215,7 @@
     "luthiers",
     "craft-process",
     "reels",
-    "tonewood-explorer"
+    "tonewood-explorer",
+    "listening-room"
   ]
 }

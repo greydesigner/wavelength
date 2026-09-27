@@ -46,7 +46,9 @@
     "reels": "Reels",
     "reel": "Reel",
     "tonewood_explorer": "Tonewood Explorer",
-    "tonewood": "Tonewood"
+    "tonewood": "Tonewood",
+    "listening_room": "Listening Room",
+    "track": "Track"
   },
   "labels": {
     "accent": "Accent",
@@ -106,7 +108,9 @@
     "warmth": "Warmth",
     "brightness": "Brightness",
     "projection": "Projection",
-    "sustain": "Sustain"
+    "sustain": "Sustain",
+    "subtitle": "Subtitle",
+    "duration": "Duration"
   },
   "options": {
     "alignment": {
