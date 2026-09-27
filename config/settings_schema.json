@@ -1,26 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Skeleton",
+    "theme_name": "Wavelength",
     "theme_version": "0.1.0",
-    "theme_author": "Shopify",
+    "theme_author": "Prabal Gondane",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
-  },
-  {
-    "name": "t:general.typography",
-    "settings": [
-      {
-        "type": "header",
-        "content": "t:general.fonts"
-      },
-      {
-        "type": "font_picker",
-        "id": "type_primary_font",
-        "default": "work_sans_n4",
-        "label": "t:general.primary"
-      }
-    ]
   },
   {
     "name": "t:general.layout",
@@ -49,24 +34,7 @@
         "step": 1,
         "unit": "px",
         "label": "t:labels.page_margin",
-        "default": 20
-      }
-    ]
-  },
-  {
-    "name": "t:general.colors",
-    "settings": [
-      {
-        "type": "color",
-        "id": "background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "foreground_color",
-        "default": "#333333",
-        "label": "t:labels.foreground"
+        "default": 32
       },
       {
         "type": "range",
@@ -76,7 +44,148 @@
         "step": 1,
         "unit": "px",
         "label": "t:labels.input_corner_radius",
-        "default": 4
+        "default": 2
+      }
+    ]
+  },
+  {
+    "name": "t:general.colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:general.colors_paragraph"
+      },
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "t:labels.background",
+            "default": "#FDFAF5"
+          },
+          {
+            "type": "color",
+            "id": "background_alt",
+            "label": "t:labels.background_alt",
+            "default": "#F2E8D8"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "t:labels.text",
+            "default": "#1C1410"
+          },
+          {
+            "type": "color",
+            "id": "text_muted",
+            "label": "t:labels.text_muted",
+            "default": "#7A5C3E"
+          },
+          {
+            "type": "color",
+            "id": "accent",
+            "label": "t:labels.accent",
+            "default": "#B89B74"
+          },
+          {
+            "type": "color",
+            "id": "accent_text",
+            "label": "t:labels.accent_text",
+            "default": "#1C1410"
+          },
+          {
+            "type": "color",
+            "id": "inverse_background",
+            "label": "t:labels.inverse_background",
+            "default": "#3A2C1F"
+          },
+          {
+            "type": "color",
+            "id": "inverse_text",
+            "label": "t:labels.inverse_text",
+            "default": "#FDFAF5"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "t:labels.border",
+            "default": "#E3D6C4"
+          }
+        ],
+        "role": {
+          "text": "text",
+          "background": "background",
+          "links": "accent",
+          "icons": "text",
+          "primary_button": "accent",
+          "on_primary_button": "accent_text",
+          "primary_button_border": "accent",
+          "secondary_button": "background_alt",
+          "on_secondary_button": "text",
+          "secondary_button_border": "border"
+        }
+      },
+      {
+        "type": "select",
+        "id": "default_color_scheme",
+        "label": "t:labels.default_color_scheme",
+        "options": [
+          {
+            "value": "scheme-1",
+            "label": "t:presets.scheme_paper.label"
+          },
+          {
+            "value": "scheme-2",
+            "label": "t:presets.scheme_ink.label"
+          }
+        ],
+        "default": "scheme-1"
+      }
+    ]
+  },
+  {
+    "name": "t:general.typography",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:general.typography_paragraph"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "t:labels.heading_scale",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "t:labels.body_scale",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "t:general.buttons_inputs",
+    "settings": [
+      {
+        "type": "range",
+        "id": "button_corner_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "t:labels.button_corner_radius",
+        "default": 2
       }
     ]
   }

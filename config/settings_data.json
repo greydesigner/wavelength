@@ -8,5 +8,34 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#FDFAF5",
+          "background_alt": "#F2E8D8",
+          "text": "#1C1410",
+          "text_muted": "#7A5C3E",
+          "accent": "#B89B74",
+          "accent_text": "#1C1410",
+          "inverse_background": "#3A2C1F",
+          "inverse_text": "#FDFAF5",
+          "border": "#E3D6C4"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#3A2C1F",
+          "background_alt": "#2E2216",
+          "text": "#FDFAF5",
+          "text_muted": "#C9BBA6",
+          "accent": "#B89B74",
+          "accent_text": "#1C1410",
+          "inverse_background": "#FDFAF5",
+          "inverse_text": "#1C1410",
+          "border": "#4A3A26"
+        }
+      }
+    }
+  }
 }

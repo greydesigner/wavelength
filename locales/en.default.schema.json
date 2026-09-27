@@ -4,12 +4,14 @@
     "article": "Article",
     "block": "Block",
     "blog": "Blog",
+    "buttons_inputs": "Buttons and inputs",
     "cart": "Cart",
     "collection": "Collection",
     "collections": "Collections",
     "collection_card": "Collection card",
     "collections_grid": "Collections grid",
     "colors": "Colors",
+    "colors_paragraph": "Wavelength ships with two color schemes — Paper (light) and Ink (dark) — used across sections and section groups.",
     "column": "Column",
     "content": "Content",
     "custom_section": "Custom section",
@@ -31,24 +33,36 @@
     "sidebar": "Sidebar",
     "text": "Text",
     "theme": "Theme",
-    "typography": "Typography"
+    "typography": "Typography",
+    "typography_paragraph": "Wavelength uses a fixed brand typeface pairing (a serif display face for headings, a grotesque sans for body text) as part of its visual identity. Use the scales below to adjust sizing without changing the typefaces themselves."
   },
   "labels": {
+    "accent": "Accent",
+    "accent_text": "Text on accent",
     "alignment": "Alignment",
     "background": "Background",
+    "background_alt": "Background (alternate)",
+    "border": "Border",
+    "body_scale": "Body text scale",
+    "button_corner_radius": "Button corner radius",
+    "customer_account_menu": "Customer account menu",
+    "default_color_scheme": "Default color scheme",
     "foreground": "Foreground",
     "grid_gap": "Grid spacing",
     "grid_item_width": "Grid item width",
+    "heading_scale": "Heading scale",
     "input_corner_radius": "Input corner radius",
+    "inverse_background": "Inverse background",
+    "inverse_text": "Inverse text",
     "layout_direction": "Layout direction",
     "menu": "Menu",
-    "customer_account_menu": "Customer account menu",
     "padding": "Padding",
     "page_margin": "Page margin",
     "page_width": "Page width",
     "show_payment_icons": "Show payment icons",
-    "text_style": "Text style",
-    "text": "Text"
+    "text": "Text",
+    "text_muted": "Muted text",
+    "text_style": "Text style"
   },
   "options": {
     "alignment": {
@@ -72,6 +86,14 @@
       "title": "Title",
       "subtitle": "Subtitle",
       "normal": "Normal text"
+    }
+  },
+  "presets": {
+    "scheme_paper": {
+      "label": "Paper"
     },
+    "scheme_ink": {
+      "label": "Ink"
+    }
   }
 }
