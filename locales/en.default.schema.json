@@ -44,7 +44,9 @@
     "craft_process": "Craft process",
     "process_step": "Process step",
     "reels": "Reels",
-    "reel": "Reel"
+    "reel": "Reel",
+    "tonewood_explorer": "Tonewood Explorer",
+    "tonewood": "Tonewood"
   },
   "labels": {
     "accent": "Accent",
@@ -97,7 +99,14 @@
     "step_label": "Step label",
     "subtext": "Subtext",
     "link": "Link",
-    "caption": "Caption"
+    "caption": "Caption",
+    "description": "Description",
+    "color_start": "Gradient color (start)",
+    "color_end": "Gradient color (end)",
+    "warmth": "Warmth",
+    "brightness": "Brightness",
+    "projection": "Projection",
+    "sustain": "Sustain"
   },
   "options": {
     "alignment": {

@@ -58,6 +58,98 @@
         "cta_link": "https://www.instagram.com/wavelengthinstruments/"
       }
     },
+    "tonewood-explorer": {
+          "type": "tonewood-explorer",
+          "blocks": {
+                "spruce": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Sitka Spruce",
+                            "description": "Bright, powerful, and wide-ranging dynamically — the standard top wood for players who dig in hard.",
+                            "color_start": "#c3a875",
+                            "color_end": "#e4cf9d",
+                            "warmth": 40,
+                            "brightness": 85,
+                            "projection": 90,
+                            "sustain": 70
+                      }
+                },
+                "cedar": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Western Red Cedar",
+                            "description": "Warmer and more immediately responsive than spruce, especially played quietly.",
+                            "color_start": "#b8763e",
+                            "color_end": "#d99a5f",
+                            "warmth": 70,
+                            "brightness": 55,
+                            "projection": 65,
+                            "sustain": 60
+                      }
+                },
+                "mahogany": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Honduran Mahogany",
+                            "description": "Dry, woody, midrange-forward — a longtime favorite for fingerstyle players.",
+                            "color_start": "#6b3d2a",
+                            "color_end": "#8a5237",
+                            "warmth": 80,
+                            "brightness": 35,
+                            "projection": 55,
+                            "sustain": 50
+                      }
+                },
+                "rosewood": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Indian Rosewood",
+                            "description": "Deep low end and shimmering overtones, with sustain that keeps blooming after the note.",
+                            "color_start": "#3c1f1a",
+                            "color_end": "#5a2e26",
+                            "warmth": 65,
+                            "brightness": 60,
+                            "projection": 75,
+                            "sustain": 85
+                      }
+                },
+                "walnut": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Claro Walnut",
+                            "description": "Sits tonally between mahogany and rosewood — balanced, articulate, and versatile.",
+                            "color_start": "#4a3527",
+                            "color_end": "#6e4d38",
+                            "warmth": 60,
+                            "brightness": 65,
+                            "projection": 70,
+                            "sustain": 65
+                      }
+                },
+                "koa": {
+                      "type": "wood",
+                      "settings": {
+                            "name": "Hawaiian Koa",
+                            "description": "Bright and glassy when new, growing warmer and more complex for decades as it ages.",
+                            "color_start": "#8a5a2e",
+                            "color_end": "#b8834c",
+                            "warmth": 55,
+                            "brightness": 70,
+                            "projection": 60,
+                            "sustain": 55
+                      }
+                }
+          },
+          "block_order": [
+                "spruce",
+                "cedar",
+                "mahogany",
+                "rosewood",
+                "walnut",
+                "koa"
+          ],
+          "settings": {}
+    },
     "luthiers": {
       "type": "luthiers",
       "blocks": {
@@ -96,6 +188,7 @@
     "brand-story",
     "luthiers",
     "craft-process",
-    "reels"
+    "reels",
+    "tonewood-explorer"
   ]
 }

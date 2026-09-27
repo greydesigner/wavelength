@@ -52,6 +52,11 @@
   "general": {
     "all_rights_reserved": "All rights reserved.",
     "navigation": "Main menu",
-    "menu": "Menu"
+    "menu": "Menu",
+    "tone_profile": "Tone Profile",
+    "warmth": "Warmth",
+    "brightness": "Brightness",
+    "projection": "Projection",
+    "sustain": "Sustain"
   }
 }
