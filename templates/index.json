@@ -11,11 +11,43 @@
     "brand-story": {
       "type": "brand-story",
       "settings": {}
+    },
+    "luthiers": {
+      "type": "luthiers",
+      "blocks": {
+        "owen": {
+          "type": "luthier",
+          "settings": {
+            "name": "Owen Marsh",
+            "role": "Founder & Master Luthier · 18 years",
+            "quote": "I still tap every top myself before it's cut. Some habits you don't automate."
+          }
+        },
+        "dana": {
+          "type": "luthier",
+          "settings": {
+            "name": "Dana Kessler",
+            "role": "Luthier, Finishing & Setup · 9 years",
+            "quote": "The finish is the last thing anyone touches before it leaves. It has to be right."
+          }
+        },
+        "theo": {
+          "type": "luthier",
+          "settings": {
+            "name": "Théo Abara",
+            "role": "Luthier, Bracing & Repair · 6 years",
+            "quote": "Half my week is new builds, the other half is fixing instruments twice my age."
+          }
+        }
+      },
+      "block_order": ["owen", "dana", "theo"],
+      "settings": {}
     }
   },
   "order": [
     "hero",
     "build-queue",
-    "brand-story"
+    "brand-story",
+    "luthiers"
   ]
 }

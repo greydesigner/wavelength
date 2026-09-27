@@ -1,0 +1,122 @@
+{{ 'section-luthiers.css' | asset_url | stylesheet_tag }}
+
+<section class="luthiers color-{{ section.settings.color_scheme }}">
+  <div class="wrap">
+    <div class="section-head">
+      {% if section.settings.eyebrow != blank %}
+        <span class="eyebrow-sm">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+    <div class="luthier-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'luthier' %}
+          <div class="luthier-card" {{ block.shopify_attributes }}>
+            <div class="photo lu-photo{% if block.settings.image %} has-img{% endif %}"{% if block.settings.image %} style="background-image:url({{ block.settings.image | image_url: width: 800 }});"{% endif %}>
+              {% unless block.settings.image %}
+                <span class="cap">{{ block.settings.name }}</span>
+              {% endunless %}
+            </div>
+            {% if block.settings.name != blank %}
+              <h4>{{ block.settings.name }}</h4>
+            {% endif %}
+            {% if block.settings.role != blank %}
+              <div class="lu-role">{{ block.settings.role }}</div>
+            {% endif %}
+            {% if block.settings.quote != blank %}
+              <p class="lu-note">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:general.luthiers",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:labels.eyebrow",
+      "default": "The People"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:labels.heading",
+      "default": "Meet the Luthiers"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "luthier",
+      "name": "t:general.luthier",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "t:labels.name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "t:labels.role"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "t:labels.quote"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "t:general.luthiers",
+      "blocks": [
+        {
+          "type": "luthier",
+          "settings": {
+            "name": "Owen Marsh",
+            "role": "Founder & Master Luthier · 18 years",
+            "quote": "I still tap every top myself before it's cut. Some habits you don't automate."
+          }
+        },
+        {
+          "type": "luthier",
+          "settings": {
+            "name": "Dana Kessler",
+            "role": "Luthier, Finishing & Setup · 9 years",
+            "quote": "The finish is the last thing anyone touches before it leaves. It has to be right."
+          }
+        },
+        {
+          "type": "luthier",
+          "settings": {
+            "name": "Théo Abara",
+            "role": "Luthier, Bracing & Repair · 6 years",
+            "quote": "Half my week is new builds, the other half is fixing instruments twice my age."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

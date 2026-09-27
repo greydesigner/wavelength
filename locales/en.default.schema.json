@@ -38,7 +38,9 @@
     "logo": "Logo",
     "hero": "Hero",
     "build_queue": "Build queue",
-    "brand_story": "Brand story"
+    "brand_story": "Brand story",
+    "luthiers": "Luthiers",
+    "luthier": "Luthier"
   },
   "labels": {
     "accent": "Accent",
@@ -84,7 +86,10 @@
     "current_stage": "Current stage",
     "availability_label": "Availability label",
     "availability_value": "Availability value",
-    "body": "Body text"
+    "body": "Body text",
+    "name": "Name",
+    "role": "Role",
+    "quote": "Quote"
   },
   "options": {
     "alignment": {
